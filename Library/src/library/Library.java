@@ -3,27 +3,23 @@ package library;
 import library.Librarian;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Library {
 
     public static void main(String[] args) {
         Librarian librarian = new Librarian();
-        Repository repository = new Repository();
-        librarian.checkBook(repository.book2);
-        librarian.getBook(repository.book2);
-        librarian.getBook(repository.book2);
-        librarian.returnBook(repository.book2);
-        librarian.returnBook(repository.book2);
-        librarian.checkAlbum(repository.album);
-        librarian.checkEBook(repository.ebook2);
-        librarian.checkEBook(repository.ebook1);
+        librarian.checkBook(librarian.repository.books.get("Jane Eyre"));
+        //librarian.getBook(librarian.repository.books.get("Alice in Wonderland"));
+        librarian.getBook(librarian.repository.books.get("Jane Eyre"));
+        librarian.returnBook(librarian.repository.books.get("Jane Eyre"));
+        librarian.returnBook(librarian.repository.books.get("Jane Eyre"));
+        librarian.checkAlbum(librarian.repository.albums.get("Long Ambients Two"));
         List<Downloadable> listToDownload = new ArrayList();
-        listToDownload.add(librarian.getEBook(repository.ebook2));
-        listToDownload.add(librarian.getAlbum(repository.album));
-        listToDownload.add(librarian.getEBook(repository.ebook1));
+        listToDownload.add(librarian.getEBook(librarian.repository.ebooks.get("Robison Crusoe")));
+        listToDownload.add(librarian.getAlbum(librarian.repository.albums.get("Long Ambients Two")));
+        listToDownload.add(librarian.getEBook(librarian.repository.ebooks.get("Little Women")));
+        listToDownload.add(librarian.getSong((Song) librarian.repository.albums.get("Hella Brown Metal")));
         listToDownload.forEach(f -> f.download());
-        librarian.downloadAlbum(repository.album);
     }
 }

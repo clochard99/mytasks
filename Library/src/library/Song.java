@@ -1,6 +1,6 @@
 package library;
 
-public class Song extends Album implements Downloadable {
+public class Song extends Album {
 
     public Song(String musician, String name, String availability) {
         super(musician, name, availability);

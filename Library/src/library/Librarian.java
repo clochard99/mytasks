@@ -2,8 +2,8 @@ package library;
 
 
 public class Librarian {
-
-    boolean checkBook(Book book) {
+    Repository repository  = new Repository();
+   boolean checkBook(Book book) {
         if(book.isAvailability()) {
             System.out.println("The library has " + book.getTitle() + " " + book.getAuthor());
             return true;
