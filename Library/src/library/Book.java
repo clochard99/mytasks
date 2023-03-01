@@ -38,5 +38,8 @@ public class Book {
                 ", content='" + content + '\'' +
                 '}';
     }
+    Book() {
+
+    }
 
 }

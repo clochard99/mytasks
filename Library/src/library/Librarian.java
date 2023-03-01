@@ -2,7 +2,10 @@ package library;
 
 
 public class Librarian {
-    Repository repository  = new Repository();
+    Repository repoBook  = new Repository(new Book());
+    Repository repoEbook = new Repository(new EBook());
+    Repository repoAlbum = new Repository(new Album());
+
    boolean checkBook(Book book) {
         if(book.isAvailability()) {
             System.out.println("The library has " + book.getTitle() + " " + book.getAuthor());

@@ -14,4 +14,7 @@ public class EBook extends Book implements Downloadable {
             System.out.println("Error");
         }
     }
+    EBook() {
+
+    }
 }

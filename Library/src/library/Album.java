@@ -40,4 +40,7 @@ public class Album implements Downloadable {
             System.out.println("Error");
         }
     }
+    Album() {
+
+    }
 }
