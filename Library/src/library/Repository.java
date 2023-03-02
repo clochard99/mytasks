@@ -6,6 +6,8 @@ import java.util.Map;
 public class Repository {
 
     public Map<String,Book> books;
+    public Map<String,EBook> ebooks;
+    public Map<String,Album> albums;
 
     Repository(Book book) {
         books = new HashMap<>();
@@ -14,13 +16,12 @@ public class Repository {
         books.put("Wuthering Heights",new Book("Wuthering Heights","Emily Brontë","",true));
         books.put("Moby Dick",new Book ("Moby Dick","Herman Melville","",true));
     }
-    public Map<String,EBook> ebooks;
     Repository(EBook ebook) {
         ebooks = new HashMap<>();
         ebooks.put("Robison Crusoe",new EBook("Robison Crusoe","Daniel Defoe","",true));
         ebooks.put("Little Women",new EBook("Little Women", "Louisa May Alcott", "", true));
     }
-    public Map<String,Album> albums;
+
     Repository(Album album) {
         albums = new HashMap<>();
         albums.put("Long Ambients Two",new Album("Moby","Long Ambients Two", "downloadable"));
