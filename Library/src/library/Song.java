@@ -2,17 +2,15 @@ package library;
 
 public class Song extends Album {
 
-    public Song(String musician, String name, String availability) {
-        super(musician, name, availability);
-    }
+    public Song(String musician, String name) {
+        super(musician, name);
+    } //если не вызвать super , то все равно будет вызвано super дефолтно тогда вызывается дефолтный конструктор!
+    // нужно для приведения типов = instanceOf
+
 
 
     @Override
     public void download() {
-        if(getAvailability() =="downloadable") {
-            System.out.println("Downloading...");
-        } else {
-            System.out.println("Error");
-        }
+        System.out.println("Downloading...");
     }
 }

@@ -22,6 +22,11 @@ public class Book {
     public String getAuthor() {
         return author;
     }
+    public Book(String title, String author, String content) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+    }
 
     public Book(String title, String author, String content, boolean availability) {
         this.title = title;
@@ -37,9 +42,6 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", content='" + content + '\'' +
                 '}';
-    }
-    Book() {
-
     }
 
 }

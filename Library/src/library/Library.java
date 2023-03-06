@@ -9,18 +9,19 @@ public class Library {
 
     public static void main(String[] args) {
         Librarian librarian = new Librarian();
-        librarian.checkBook(librarian.repoBook.books.get("Jane Eyre"));
-        librarian.checkEBook(librarian.repoEbook.ebooks.get("Robison Crusoe"));
-        //librarian.getBook(librarian.repository.books.get("Alice in Wonderland"));
-        librarian.getBook(librarian.repoBook.books.get("Jane Eyre"));
-        librarian.returnBook(librarian.repoBook.books.get("Jane Eyre"));
-        librarian.returnBook(librarian.repoBook.books.get("Jane Eyre"));
-        librarian.checkAlbum(librarian.repoAlbum.albums.get("Long Ambients Two"));
-        List<Downloadable> listToDownload = new ArrayList<>();
-        listToDownload.add(librarian.getEBook(librarian.repoEbook.ebooks.get("Robison Crusoe")));
-        listToDownload.add(librarian.getAlbum(librarian.repoAlbum.albums.get("Long Ambients Two")));
-        listToDownload.add(librarian.getEBook(librarian.repoEbook.ebooks.get("Little Women")));
-        listToDownload.add(librarian.getSong((Song) librarian.repoAlbum.albums.get("Hella Brown Metal")));
+        librarian.getEBook("Little Women").download();
+        librarian.getEBook("Alice in Wonderland").download();
+        //librarian.getEBook("Hey");
+        librarian.getAlbum("Long Ambients Two").download();
+        //librarian.getSong("Brown Metal");
+        librarian.getSong("Hella Brown Metal").download();
+        librarian.getBook("Jane Eyre");
+        //librarian.getBook("Jane Eyre");
+        librarian.returnBook("Jane Eyre");
+        librarian.returnBook("The Great Gatsby");
+        List<Downloadable> listToDownload = new ArrayList();
+        listToDownload.add(librarian.getEBook("Little Women"));
+        listToDownload.add(librarian.getEBook("Alice in Wonderland"));
         listToDownload.forEach(Downloadable::download);
     }
 }
